@@ -52,4 +52,20 @@ public class OwnerServiceTest {
 		assertEquals("Huaranca", upgradeOwner.getLastName());
 		assertEquals("Arequipa", upgradeOwner.getCity());
 	}
+
+	@Test
+	public void testFindOwner(){
+		Integer ID = 4;
+		String FIRST_NAME = "Harold";
+		String LAST_NAME = "Davis";
+		Owner owner = null;
+		try {
+			owner = ownerService.findById(ID);
+		} catch (OwnerNotFoundException e) {
+			fail(e.getMessage());
+		}
+		log.info("" + owner);
+		assertEquals(FIRST_NAME, owner.getFirstName());
+		assertEquals(LAST_NAME, owner.getLastName());
+	}
 }
