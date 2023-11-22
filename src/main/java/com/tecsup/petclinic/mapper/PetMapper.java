@@ -15,6 +15,7 @@ import java.util.List;
 @Mapper(componentModel = "spring", nullValueMappingStrategy =  NullValueMappingStrategy.RETURN_DEFAULT)
 public interface PetMapper {
 
+<<<<<<< HEAD
     PetMapper INSTANCE = Mappers.getMapper(PetMapper.class);
 
     //@Mapping(target = "name", source = "name")
@@ -54,3 +55,44 @@ public interface PetMapper {
 
 
 }
+=======
+	PetMapper INSTANCE = Mappers.getMapper(PetMapper.class);
+
+	//@Mapping(target = "name", source = "name")
+	@Mapping(source = "birthDate", target = "birthDate")
+	Pet toPet(PetTO petTO);
+
+	default Date stringToDate(String dateStr) {
+
+		Date date = null;
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			date = dateFormat.parse(dateStr);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		return date;
+	}
+
+	@Mapping(source = "birthDate", target = "birthDate")
+	PetTO toPetTO(Pet pet);
+
+	default String dateToString(Date date) {
+
+		if (date != null ) {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			return dateFormat.format(date);
+		} else {
+			return "";
+		}
+
+	}
+
+	List<PetTO> toPetTOList(List<Pet> petList);
+
+	List<Pet> toPetList(List<PetTO> petTOList);
+
+
+}
+>>>>>>> 2d91609adf88dab8c1c351d2d19d183e3d6b397e

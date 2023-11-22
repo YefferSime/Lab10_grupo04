@@ -1,6 +1,9 @@
 package com.tecsup.petclinic.util;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2d91609adf88dab8c1c351d2d19d183e3d6b397e
 import com.tecsup.petclinic.domain.PetTO;
 import com.tecsup.petclinic.entities.Pet;
 
@@ -84,4 +87,8 @@ public class TObjectCreator {
 	public static PetTO newPetTOForDelete() {
 		return new PetTO(10000,"Beethoven3",1,1, "2020-05-20");
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2d91609adf88dab8c1c351d2d19d183e3d6b397e
