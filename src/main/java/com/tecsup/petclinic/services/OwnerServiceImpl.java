@@ -9,11 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * 
- * @author D - S - D - V
- *
- */
+
 @Service
 @Slf4j
 public class OwnerServiceImpl implements OwnerService {

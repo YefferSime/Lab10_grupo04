@@ -1,10 +1,6 @@
 package com.tecsup.petclinic.exception;
 
-/**
- * 
- * @author jgomezm
- *
- */
+
 public class OwnerNotFoundException extends Exception {
 
 	/**
